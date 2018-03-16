@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>It Challenges #3</title>
+      <link rel="icon" type="image/png" href="https://itchallenges.me/favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">  
+      <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 600 600"
+    class="player"
+    preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <clipPath id="outerCircle">
+          <circle cx="300" cy="300" r="305" />
+        </clipPath>
+
+        <clipPath id="innerCircle">
+            <circle cx="300" cy="300" r="290" />
+          </clipPath>
+      </defs>
+      <g class='playlist-controls playlist-visible'>
+        <g class='playlist-lines'>
+          <line class="playlist-progress"
+            x1="0" x2="600" y1="2" y2="3" stroke-dasharray="600"  />
+          <line class="playlist-top-line"
+            x1="0" x2="600" y1="2" y2="3" />
+          <line class="playlist-center-line"
+            x1="0" x2="600" y1="80" y2="80" />
+          <line class="playlist-bottom-line"
+            x1="0" x2="600" y1="598" y2="598" />
+        </g>
+        <image class='icon playlist-close-button playlist-visible' 
+          x="275" y="32" width='50' height='20' xlink:href="./assets/img/icons/close.svg" />
+      </g>
+      <g class='player-circles playlist-hidden'>
+        <circle
+          class="progress-bg"
+          r="298" cx="300" cy="300"
+          stroke-dasharray='1872.39'
+          fill="transparent">
+        </circle>
+        <circle
+          class="progress"
+          r="298" cx="300" cy="300"
+          stroke-dasharray='1872.39'
+          stroke-dashoffset='1872.39'
+          fill="transparent">
+        </circle> 
+        <circle
+          class="center-circle"
+          r="220" cx="300" cy="300"
+          stroke-dasharray='1872.39'
+          fill="transparent">
+        </circle>
+        <image class='seeker playlist-hidden' 
+          x="0" y="0" width='600' height='600'
+          clip-path="url(#outerCircle)" xlink:href="./assets/img/icons/seeker.svg" />
+        <image class='seeker-overlay playlist-hidden' 
+          x="0" y="0" width='600' height='600'
+          clip-path="url(#innerCircle)" xlink:href="./assets/img/icons/seeker.svg" />
+      </g>
+      <g class='player-controls playlist-hidden'>
+        <image class='icon playlist-button'
+          x="275" y="32" width='50' height='20' 
+          xlink:href="./assets/img/icons/playlist.svg" />
+        <image class='icon play-pause-button'
+          x="283" y="550" width='50' height='20' 
+          xlink:href="./assets/img/icons/playpause.svg" />
+        <image class='icon next-button'
+          x="535" y="292" width='50' height='20'
+          xlink:href="./assets/img/icons/next.svg" />
+        <image class='icon prev-button'
+          x="18" y="292" width='50' height='20' 
+          xlink:href="./assets/img/icons/prev.svg" />
+      </g>
+      <g class='current-track-info playlist-hidden'>
+        <text class="elapsed-time" text-anchor="middle" x="300" y="260">
+          --:--
+        </text>
+        <text class='track-title current-track-title' text-anchor="middle" x="300" y="360"></text>
+        <text class='track-author current-track-author' text-anchor="middle" x="300" y="390"></text>
+      </g>
+    </svg>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
